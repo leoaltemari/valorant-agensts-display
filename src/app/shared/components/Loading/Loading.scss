@@ -1,0 +1,43 @@
+@import 'src/styles/colors.scss';
+
+.stage {
+  width: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dot-typing {
+  position: relative;
+  left: -9999px;
+  width: 6px;
+  height: 6px;
+  border-radius: 100%;
+  background-color: $primary;
+  color: $primary;
+  box-shadow: 9984px 0 0 0 $primary, 9999px 0 0 0 $primary, 10014px 0 0 0 $primary;
+  animation: dot-typing 1.5s infinite linear;
+}
+
+@keyframes dot-typing {
+  0% {
+    box-shadow: 9984px 0 0 0 $primary, 9999px 0 0 0 $primary, 10014px 0 0 0 $primary;
+  }
+  16.667% {
+    box-shadow: 9984px -10px 0 0 $primary, 9999px 0 0 0 $primary, 10014px 0 0 0 $primary;
+  }
+  33.333% {
+    box-shadow: 9984px 0 0 0 $primary, 9999px 0 0 0 $primary, 10014px 0 0 0 $primary;
+  }
+  50% {
+    box-shadow: 9984px 0 0 0 $primary, 9999px -10px 0 0 $primary, 10014px 0 0 0 $primary;
+  }
+  66.667% {
+    box-shadow: 9984px 0 0 0 $primary, 9999px 0 0 0 $primary, 10014px 0 0 0 $primary;
+  }
+  83.333% {
+    box-shadow: 9984px 0 0 0 $primary, 9999px 0 0 0 $primary, 10014px -10px 0 0 $primary;
+  }
+  100% {
+    box-shadow: 9984px 0 0 0 $primary, 9999px 0 0 0 $primary, 10014px 0 0 0 $primary;
+  }
+}
