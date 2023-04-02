@@ -1,11 +1,12 @@
-import { environment } from "../../environment/environment";
+import { environment } from '@env/environment';
+
 
 type Endpoints = ValorantEndpoints;
 
 export const enum ValorantEndpoints {
   Root = '/',
   Agents = '/agents',
-}
+};
 
 
 const interpolation = (baseurl: string, path: string, params: (string | number)[] = []): string => {

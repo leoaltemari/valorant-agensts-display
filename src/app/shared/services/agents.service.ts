@@ -1,9 +1,10 @@
-import axios from "axios";
-import { Agent } from "../models/agent.model.model";
-import { ValorantApiResponse } from "../models/responses/valorant-api.model";
+import { useQuery, UseQueryResult } from 'react-query';
 
-import { UseQueryResult, useQuery } from 'react-query';
-import { ValorantEndpoints, url } from "../utils/endpoints.utils";
+import { Agent, ValorantApiResponse } from '@models';
+import { url, ValorantEndpoints } from '@utils';
+
+import axios from 'axios';
+
 
 type GetAgentsResponse = ValorantApiResponse<Agent[]>;
 
