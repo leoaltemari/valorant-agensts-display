@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { Agent } from '@models';
 
 import './AgentCard.scss';
@@ -17,12 +19,17 @@ export default function AgentCard({ agent }: AgentCardProps) {
         <img className="agent-portrait" src={agent.fullPortrait} />
       </div>
 
-      <button className="details primary text-white" type="button">
+      <Link
+        className="details primary text-white"
+        to={`/agents/${agent.displayName.toLowerCase()}/${agent.uuid}`}
+      >
         <div className="label">
           <span className="hover-effect"></span>
-          <span className="label-text fw-bold font-valorant">Details</span>
+          <span className="label-text fw-bold font-valorant text-center">
+            Details
+          </span>
         </div>
-      </button>
+      </Link>
     </div>
   );
 }

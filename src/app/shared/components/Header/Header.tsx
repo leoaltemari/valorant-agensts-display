@@ -8,12 +8,12 @@ interface HeaderLoaderData {
 }
 
 export default function Header() {
-  const data = useLoaderData() as HeaderLoaderData;
+  const { headerText } = useLoaderData() as HeaderLoaderData;
 
   return (
     <header className="fade-header position-relative">
       <div className="page-header p-4 d-flex justify-content-center align-items-center">
-        <h1 className="text-secondary uppercase m-0">{ data.headerText }</h1>
+        <h1 className="text-secondary text-uppercase m-0">{ headerText }</h1>
       </div>
     </header>
   )

@@ -1,6 +1,6 @@
 
 
-import Header from '@/app/shared/components/Header/Header';
+import Header from '@components/Header/Header';
 
 import AgentsList from './Agents-List/AgentsList';
 
