@@ -13,6 +13,8 @@ export function getAgents(): UseQueryResult<Agent[], unknown> {
     const requestUrl = url(ValorantEndpoints.Agents);
     const response = await axios.get<GetAgentsResponse>(requestUrl);
 
-    return response.data.data;
+    return response.data.data
+      .filter(agent => agent.isPlayableCharacter)
+      .sort((a, b) => a.displayName.localeCompare(b.displayName));
   });
 }
