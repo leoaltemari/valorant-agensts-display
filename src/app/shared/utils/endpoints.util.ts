@@ -6,6 +6,7 @@ type Endpoints = ValorantEndpoints;
 export const enum ValorantEndpoints {
   Root = '/',
   Agents = '/agents',
+  Agent = '/agents/{{0}}',
 };
 
 
@@ -15,6 +16,6 @@ const interpolation = (baseurl: string, path: string, params: (string | number)[
   return baseurl + interpoled;
 };
 
-export function url(endpoint: Endpoints): string {
-  return interpolation(environment.valorantApiUrl, endpoint);
+export function url(endpoint: Endpoints, ...params: (string | number)[]): string {
+  return interpolation(environment.valorantApiUrl, endpoint, params);
 }
