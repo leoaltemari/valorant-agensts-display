@@ -1,0 +1,140 @@
+
+@import 'src/styles/colors.scss';
+
+$card-width: 400px;
+
+
+.agent-card {
+  max-width: $card-width;
+  position: relative;
+
+
+  &:before, &:after {
+    content: '';
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, white, rgba(0, 0, 0, 0)) 1 100%;
+    position: absolute;
+    height: 100%;
+  }
+
+  &:before {
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+  }
+}
+
+.agent-bg, .agent-portrait {
+  max-width: $card-width;
+}
+
+.agent-bg {
+  opacity: 20%;
+}
+
+.agent-portrait {
+  max-width: calc($card-width + 200px);
+  position: absolute;
+}
+
+.details {
+  width: 65%;
+  position: relative;
+  padding: 12px;
+  border: 0;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    content: '';
+    background-color: transparent;
+    display: block;
+    position: absolute;
+    height: calc(50% - 7px);
+    width: 100%;
+    border: 1px solid $green;
+    left: 0;
+  }
+
+  &:before {
+    border-bottom: 0;
+    top: 0;
+  }
+
+  &:after {
+    border-top: 0;
+    bottom: 0;
+  }
+}
+
+.label {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+
+  &:before {
+    content: '';
+    height: 100%;
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: $green;
+  }
+}
+
+.hover-effect {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 120%;
+  top: 0;
+  left: -5%;
+  z-index: 1;
+  background-color: $primary;
+  transform: translateX(-100%) skew(-10deg);
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+}
+
+.details:hover .hover-effect {
+  transform: translateX(0) skew(-10deg);
+}
+
+.label-text {
+  position: relative;
+  display: block;
+  padding: 18px;
+  background-color: transparent;
+  z-index: 1;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    right: 0;
+    bottom: 0;
+    background-color: $secondary;
+    transition: background-color 0.2s ease-in;
+  }
+}
+
+.details:hover .label-text:after {
+  background-color: white;
+}
+
+.outline { color: white; }
+
+.outline .label::before,
+.outline .label::after {
+  border: 1px solid $green;
+}

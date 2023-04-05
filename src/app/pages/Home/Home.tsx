@@ -1,24 +1,17 @@
 
 
+import Header from '@/app/shared/components/Header/Header';
+
 import AgentsList from './Agents-List/AgentsList';
-import './Home.scss';
 
 
-function Home() {
-
+export default function Home() {
   return (
-    <main className="bg-secondary pt-5">
-      <header className="fade-header position-relative">
-        <div className="page-header p-4 d-flex justify-content-center align-items-center">
-          <h1 className="text-secondary m-0 ">AGENTS</h1>
-        </div>
-      </header>
-
-      <main className="p-5 d-flex justify-content-center align-items-center">
+    <>
+      <Header />
+      <div className="container py-5">
         <AgentsList />
-      </main>
-    </main>
+      </div>
+    </>
   );
 }
-
-export default Home;
