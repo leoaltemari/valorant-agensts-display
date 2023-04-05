@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from 'react';
 
-import { Loading } from '@components/Loading/Loadint';
+import Input from '@components/Input/Input';
+import Loading from '@components/Loading/Loading';
 import { Agent } from '@models';
 import { getAgents } from '@services';
 
 import AgentCard from './Agent-Card/AgentCard';
-import './AgentsList.scss';
 
 
 export default function AgentsList() {
@@ -19,7 +19,7 @@ export default function AgentsList() {
     setFilteredAgents(agentsList);
   }, [agentsList]);
 
-  const searchForAgents = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const searchForAgents = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const search = event.target.value;
     const filteredData = agentsList?.filter(agent => agent.displayName.toLowerCase().includes(search));
 
@@ -34,21 +34,7 @@ export default function AgentsList() {
 
   return (
     <div className="d-flex flex-column align-items-center">
-
-      <div className="search-agent position-relative">
-        <input
-          type="text"
-          className="search-agent p-2 my-5"
-          placeholder="Search for agent..."
-          onChange={searchForAgents}
-        />
-
-        <img
-          className="position-absolute"
-          src="src/assets/images/icons/search.png"
-          alt="Search icon"
-        ></img>
-      </div>
+      <Input onChangeEvent={searchForAgents}/>
 
       <div className="d-flex flex-wrap justify-content-center align-items-center mt-5">
         {
