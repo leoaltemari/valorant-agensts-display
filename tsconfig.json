@@ -24,7 +24,7 @@
       "@components/*": ["./src/app/shared/components/*"],
       "@models": ["src/app/shared/models"],
       "@models/*": ["src/app/app/shared/models/*"],
-      "@services/": ["src/app/shared/services"],
+      "@services": ["src/app/shared/services"],
       "@services/*": ["src/app/shared/services/*"],
       "@utils": ["./src/app/shared/utils"],
       "@utils/*": ["./src/app/shared/utils/*"],
