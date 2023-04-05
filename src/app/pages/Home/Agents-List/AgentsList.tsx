@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from 'react';
 
-import { getAgents } from '@/app/shared/services';
+import { Loading } from '@components/Loading/Loadint';
 import { Agent } from '@models';
+import { getAgents } from '@services';
 
 import AgentCard from './Agent-Card/AgentCard';
 import './AgentsList.scss';
@@ -22,10 +23,13 @@ export default function AgentsList() {
     const search = event.target.value;
     const filteredData = agentsList?.filter(agent => agent.displayName.toLowerCase().includes(search));
 
-    console.log(search);
-    console.log(filteredData);
-
     setFilteredAgents(filteredData);
+  }
+
+  const getPageContent = () => {
+    return filteredAgents?.length
+      ? filteredAgents.map(agent => <AgentCard key={agent.uuid}  agent={agent} />)
+      : <h1 className="font-valorant text-white">Any agent was found.</h1>;
   }
 
   return (
@@ -48,9 +52,7 @@ export default function AgentsList() {
 
       <div className="d-flex flex-wrap justify-content-center align-items-center mt-5">
         {
-          filteredAgents?.length
-          ? filteredAgents.map(agent => <AgentCard key={agent.uuid}  agent={agent} />)
-          : <h1 className="font-valorant text-white">Any agent was found.</h1>
+          loading ? <Loading /> : getPageContent()
         }
       </div>
     </div>
