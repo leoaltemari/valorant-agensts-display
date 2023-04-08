@@ -1,0 +1,60 @@
+@import 'src/styles/colors.scss';
+
+
+.container {
+  min-height: calc(100vh - 200px);
+}
+
+.card {
+  box-shadow: 2px 2px 60px 1px rgba(0, 0, 0, 1);
+}
+
+$agent-role-size: 50px;
+.agent-role {
+  img {
+    width: $agent-role-size;
+    height: $agent-role-size;
+  }
+
+  p {
+    letter-spacing: 5px;
+  }
+}
+
+.agent-name {
+  writing-mode: vertical-rl;
+  letter-spacing: 20px;
+  font-size: 120px !important;
+  line-height: normal;
+}
+
+.description {
+  letter-spacing: 5px;
+}
+
+.agent-image {
+  z-index: 1;
+  top: -45px;
+  right: -170px;
+  height: 760px;
+}
+
+
+.abilities-bg  {
+  z-index: 1;
+  background: linear-gradient(to top, $secondary, 80%, rgba(0, 0, 0, 0));
+}
+
+$ability-icon-size: 100px;
+.ability-card {
+  max-width: 220px;
+
+  img {
+    width: $ability-icon-size;
+    height: $ability-icon-size;
+  }
+
+  p {
+    color: white;
+  }
+}
