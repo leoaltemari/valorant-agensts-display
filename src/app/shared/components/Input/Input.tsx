@@ -18,7 +18,7 @@ export default function Input({ onChangeEvent }: InputProps) {
 
       <img
         className="position-absolute"
-        src="src/assets/images/icons/search.png"
+        src="/src/assets/images/icons/search.png"
         alt="Search icon"
       ></img>
     </div>
